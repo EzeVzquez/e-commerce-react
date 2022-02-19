@@ -1,3 +1,22 @@
 nav {
-    background-color: blueviolet; 
+  background-color: #9067c6;
+  padding: 20px;
+}
+
+.nav-logo {
+  display: flex;
+  width: 30px;
+  text-decoration: none;
+  color: #231123;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.li-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
