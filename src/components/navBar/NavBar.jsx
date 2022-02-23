@@ -3,6 +3,7 @@ import React from "react";
 import NavLink from "./navLink/Navlink";
 
 import "./navBar.css";
+import CartWidget from "../cart/cartWidget/CartWidget";
 
 const NavBar = () => {
   return (
@@ -23,10 +24,7 @@ const NavBar = () => {
             <NavLink text={"Contacto"} />
           </div>
           <div className="li-container">
-            <NavLink
-              text={"Carrito"}
-              icon={<i className="fa-solid fa-cart-shopping" />}
-            />
+            <NavLink text={"Carrito"} icon={<CartWidget />} />
             <NavLink
               text={"Iniciar sesion"}
               icon={<i className="fa-solid fa-user" />}
