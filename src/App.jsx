@@ -1,17 +1,15 @@
 import React from "react";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer";
+import ItemListContainer from "./components/items/itemListContainer/ItemListContainer";
 
 function App() {
   return (
     <div>
-      <header>
+      {/* header */}
       <NavBar />
-      </header>
-      <body>
+      {/* body */}
       <ItemListContainer saludar="Hola Soy ItemListContainer" />  
-      </body>
     </div>
   );
 }
