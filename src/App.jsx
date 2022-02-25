@@ -9,7 +9,7 @@ function App() {
       {/* header */}
       <NavBar />
       {/* body */}
-      <ItemListContainer saludar="Hola Soy ItemListContainer" />  
+      <ItemListContainer saludar="Hola Soy ItemListContainer" />
     </div>
   );
 }
