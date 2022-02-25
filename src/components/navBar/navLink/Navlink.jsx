@@ -10,7 +10,7 @@ const NavLink = ({ text, icon }) => {
             <div className="nav-links__text-container">
                 <p className="nav-links__text">{text}</p>
             </div>
-          <p className="nav-links__icon">{icon}</p>
+          <div className="nav-links__icon">{icon}</div>
         </a>
       </li>
     </div>
