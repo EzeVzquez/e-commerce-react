@@ -1,18 +1,6 @@
 .count-container {
   margin: 20px;
   padding: 20px;
-  border: 20px;
-  border: 1px;
-  max-width: 200px;
-  border-radius: 10px;
-  border-color: grey;
-  border-style: solid;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.count-container:hover {
-  transform: scale(1.02);
 }
 
 .count-text {
@@ -28,7 +16,8 @@
 .count-button {
   margin: 15px;
   padding: 7px 25px;
-  border: none;
+  border: 0;
+  outline: 0;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

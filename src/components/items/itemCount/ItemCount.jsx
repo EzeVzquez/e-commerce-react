@@ -18,7 +18,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <div className="count-container">
-      <p className="count-text">{count}</p>
+      <p className="count-text">Agregar al carrito:{count}</p>
       <div className="count-button-container">
         <button
           title="Agregar"
