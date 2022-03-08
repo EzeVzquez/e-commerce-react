@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import NavBar from "./components/navBar/NavBar";
 import ItemListContainer from "./components/items/itemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./components/items/itemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <NavBar />
       {/* body */}
       <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   );
 }

@@ -1,0 +1,36 @@
+.itemDetail-container {
+  width: 100%;
+  margin-top: 3em;
+  height: 100vh;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.itemDetail-img--container {
+  width: 50%;
+}
+
+.ItemDetail-img {
+  width: 100%;
+}
+
+.itemDetail-detail {
+  padding: 1em 0;
+  width: 50%;
+  padding: 3em;
+}
+
+.itemDetail-detail > h2,
+h3,
+p {
+  padding: 1em 0;
+}
+
+.itemDetail-detail > h2 {
+  font-size: 30px;
+}
+
+.itemDetail-detail > h3 {
+  font-size: 25px;
+}
