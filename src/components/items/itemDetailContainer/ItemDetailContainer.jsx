@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
 import { ItemDetail } from "../itemDetail/ItemDetail";
-import { getFetch } from "./../../../helpers/getFetch"
+import { getProduct } from "./../../../helpers/getFetch"
 
 export const ItemDetailContainer =()=> {
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getFetch
-          .then((response) => setProduct(response.find((product) => product.id === 3)))
+      getProduct(2)
+          .then((product) => setProduct(product))
           .catch((error) => console.error(error))
-          .finally(() => setLoading(false));
-      }, []);
+          .finally(() => setLoading(false))
+    }, []);
 
       console.log(product);
 

@@ -10,3 +10,9 @@ export const products = [
       }, 2000)
   })
 
+ export const getProduct = async (id) => {
+    const products = await getFetch
+    return products.find((product) => product.id === (id))
+     
+  }
+

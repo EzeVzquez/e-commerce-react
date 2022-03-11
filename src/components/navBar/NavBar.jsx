@@ -1,38 +1,20 @@
 import React from "react";
-
+import { Container, Row, Col } from '@nextui-org/react';
 import NavLink from "./navLink/Navlink";
-
-import "./navBar.css";
 import CartWidget from "../cart/cartWidget/CartWidget";
+import "./navBar.css";
 
 const NavBar = () => {
   return (
-    <div>
-      <nav className="navbar">
-        <a href="/" className="nav-logo">
-          <h1>Logo</h1>
-        </a>
-        <ul className="nav-menu">
-          <div className="li-container">
-            <NavLink text={"Inicio"} />
-            <NavLink
-              text={
-                "Categorias"
-              } /*icon= {<i className="fas fa-caret-down" />}*/
-            />
-            <NavLink text={"Nosotros"} />
-            <NavLink text={"Contacto"} />
-          </div>
-          <div className="li-container">
-            <NavLink text={"Carrito"} icon={<CartWidget />} />
-            <NavLink
-              text={"Iniciar sesion"}
-              icon={<i className="fa-solid fa-user" />}
-            />
-          </div>
-        </ul>
-      </nav>
-    </div>
+    <Container css={{'background':'$purple200'}} fluid>
+      <Row >
+      <NavLink text={"Inicio"} />
+      <NavLink text={"Categorias"} />
+      <NavLink text={"Nosotros"} />
+      <NavLink text={"Contacto"} />
+      <NavLink text={"Carrito"} icon={<CartWidget />} />
+      </Row>
+    </Container>
   );
 };
 

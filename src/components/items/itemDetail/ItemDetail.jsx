@@ -8,10 +8,10 @@ export const ItemDetail = ({ title, stock, price, pictureUrl, description }) => 
         <img className="ItemDetail-img" src={pictureUrl} alt={title} />
       </div>
       <div className="itemDetail-detail">
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <p>{stock}</p>
-        <h3>{formatPrice(price)}</h3>
+        <h2 className="itemDetail-detail--title">{title}</h2>
+        <p className="itemDetail-detail--text itemDetail-detail--description">{description}</p>
+        <p className="itemDetail-detail--text itemDetail-detail--stock">En stock:{stock}</p>
+        <h3 className="itemDetail-detail--price">{formatPrice(price)}</h3>
       </div>
     </div>
   );
