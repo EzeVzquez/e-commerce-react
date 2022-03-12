@@ -2,7 +2,7 @@ import React from "react";
 
 import "./NavLink.css";
 
-const NavLink = ({ text, icon }) => {
+const NavBarLink = ({ text, icon }) => {
   return (
     <div>
       <li className="nav-item">
@@ -17,4 +17,4 @@ const NavLink = ({ text, icon }) => {
   );
 };
 
-export default NavLink;
+export default NavBarLink;

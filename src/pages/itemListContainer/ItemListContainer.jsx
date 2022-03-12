@@ -1,6 +1,6 @@
 import "./ItemListContainer.css";
 
-import ItemList from "../itemList/ItemList";
+import ItemList from "./../../components/items/itemList/ItemList";
 
 const ItemListContainer = () => {
   return (
