@@ -1,7 +1,7 @@
-import { useState } from "react";
 import "./ItemCount.css";
+import { useState } from "react";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const agregar = () => {
@@ -48,5 +48,3 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     </div>
   );
 };
-
-export default ItemCount;

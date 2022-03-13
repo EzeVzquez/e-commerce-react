@@ -1,8 +1,3 @@
-
-export const CartContainer = ()=> {
-    return (
-        <div>
-            CartContainer
-        </div>
-    )
-}
+export const CartContainer = () => {
+  return <div>CartContainer</div>;
+};

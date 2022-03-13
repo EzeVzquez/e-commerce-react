@@ -1,8 +1,8 @@
+import "./Item.css";
 import { Link } from "react-router-dom";
 import { formatPrice } from "../../../helpers/formatPrice";
-import "./Item.css";
 
-export const Item = ({id, title, stock, price, pictureUrl, description }) => {
+export const Item = ({ id, title, stock, price, pictureUrl, description }) => {
   return (
     <div className="item-container">
       <h3 className="item-title">{title}</h3>

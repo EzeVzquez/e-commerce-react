@@ -1,15 +1,10 @@
-import React from "react";
-
-import CartIcon from "../../../assets/svg/cartIcon/CartIcon";
-
 import "./CartWidget.css";
+import { CartIcon } from "../../../assets/svg/cartIcon/CartIcon";
 
-const CartWidget = () => {
+export const CartWidget = () => {
   return (
     <div className="cart-container">
       <CartIcon className="navbar__cart-icon" />
     </div>
   );
 };
-
-export default CartWidget;

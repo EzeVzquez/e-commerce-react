@@ -1,8 +1,6 @@
-import React from "react";
-
 import "./CartIcon.css";
 
-const CartIcon = ({ className }) => {
+export const CartIcon = ({ className }) => {
   return (
     <svg
       className={`svg-icon ${className}`}
@@ -16,5 +14,3 @@ const CartIcon = ({ className }) => {
     </svg>
   );
 };
-
-export default CartIcon;
