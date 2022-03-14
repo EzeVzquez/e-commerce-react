@@ -3,6 +3,7 @@ import { getFetch } from "../../../helpers/getFetch";
 import { useEffect, useState } from "react";
 import { Item } from "../item/Item";
 import { useParams } from "react-router-dom";
+import { Grid, Loading } from "@nextui-org/react";
 
 export const ItemList = () => {
   const [products, setProducts] = useState([]);
@@ -26,13 +27,13 @@ export const ItemList = () => {
   }, [catId]);
 
   return (
-    <>
+    <Grid.Container justify="center" css={{margin:"30px 0px"}}>
       {loading ? (
-        <h1>Cargando...</h1>
+        <Loading size="xl" color="secondary" textColor="secondary">Cargando</Loading>
       ) : (
         products.map((product) => <Item key={product.id} {...product} />)
       )}
-    </>
+    </Grid.Container>
   );
 };
 

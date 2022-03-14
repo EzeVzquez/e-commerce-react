@@ -1,11 +1,11 @@
 import "./ItemListContainer.css";
-
 import { ItemList } from "./../../components/items/itemList/ItemList";
+import { Grid } from "@nextui-org/react";
 
 export const ItemListContainer = () => {
   return (
-    <div className="container">
+    <Grid.Container >
       <ItemList />
-    </div>
+    </Grid.Container>
   );
 };

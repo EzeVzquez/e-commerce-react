@@ -4,28 +4,26 @@ export const products = [
     title: "Mesa",
     stock: 10,
     price: 11200,
-    pictureUrl: "https://d1r8o43atolcyl.cloudfront.net/683765671106_1.jpg",
-    description: "bla1 bla1 bla1 bla1",
+    pictureUrl: "https://images.pexels.com/photos/11112739/pexels-photo-11112739.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    description: "Mesa rectangular de madera",
     category: "hogar",
   },
   {
     id: "2",
-    title: "Notebook",
+    title: "Mouse",
     stock: 3,
-    price: 75000,
-    pictureUrl:
-      "https://ar-media.hptiendaenlinea.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/2/B/2B0F2LA-1_T1626269191.png",
-    description: "bla2 bla2 bla2 bla2",
+    price: 5000,
+    pictureUrl: "https://images.pexels.com/photos/9058886/pexels-photo-9058886.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    description: "Mouse de ultima generacion",
     category: "tecnologia",
   },
   {
     id: "3",
-    title: "Televisor",
+    title: "Camara",
     stock: 6,
     price: 55000,
-    pictureUrl:
-      "https://grupomansion.com/wp-content/uploads/2020/08/UN43T5300AKXZL1.jpg",
-    description: "bla3 bla3 bla3 bla3",
+    pictureUrl: "https://images.pexels.com/photos/9660955/pexels-photo-9660955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    description: "Camara de fotos con una excelente calidad",
     category: "tecnologia",
   },
   {
@@ -34,8 +32,8 @@ export const products = [
     stock: 2,
     price: 16000,
     pictureUrl:
-      "http://www.americanwood.com.ar/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/e/r/erika_bige_2.jpg",
-    description: "bla4 bla4 bla4 bla4",
+    "https://images.pexels.com/photos/11112731/pexels-photo-11112731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    description: "Sillon gris de tamaño pequeño",
     category: "hogar",
   },
 ];

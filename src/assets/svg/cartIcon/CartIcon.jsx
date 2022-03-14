@@ -5,7 +5,7 @@ export const CartIcon = ({ className }) => {
     <svg
       className={`svg-icon ${className}`}
       width="50px"
-      height="50px"
+      height="30px"
       version="1.1"
       viewBox="0 0 700 700"
       xmlns="http://www.w3.org/2000/svg"

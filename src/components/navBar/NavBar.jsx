@@ -1,35 +1,45 @@
-import "./navBar.css";
-import { Container, Row, Col } from "@nextui-org/react";
-import { NavBarLink } from "./navBarLink/NavBarLink";
+import "./NavBar.css";
+import { Row, Grid, Text } from "@nextui-org/react";
 import { CartWidget } from "../cart/cartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <Container css={{ background: "$purple200" }} fluid>
-      <Row>
-        <Link to={"/"}>
-          <p>Logo</p>
-        </Link>
-        <Link to={"/"}>
-          <NavBarLink text={"Inicio"} />
-        </Link>
-        <Link to={"/categoria/tecnologia"}>
-          <NavBarLink text={"Tecnologia"} />
-        </Link>
-        <Link to={"/categoria/hogar"}>
-          <NavBarLink text={"Hogar"} />
-        </Link>
-        <Link to={"/nosotros"}>
-          <NavBarLink text={"Nosotros"} />
-        </Link>
-        <Link to={"/contacto"}>
-          <NavBarLink text={"Contacto"} />
+    <Grid.Container css={{ background: "$purple300" }}xl justify="space-between">
+      <Grid css={{padding:"15px"}}>
+      <Link to={"/"}>
+            <Text size={20} weight="medium">LOGO</Text>
+          </Link>
+      </Grid>
+      <Grid css={{padding:"15px"}}>
+        <Row>
+          <Link to={"/"}>
+          <Text css={{padding:"0 20px"}} color="$gray200" weight="semibold">Inicio</Text>
+          </Link>
+          <Link to={"/categoria/tecnologia"}>
+          <Text css={{padding:"0 20px"}} color="$gray200" weight="semibold">Tecnologia</Text>
+          </Link>
+          <Link to={"/categoria/hogar"}>
+          <Text css={{padding:"0 20px"}} color="$gray200" weight="semibold">Hogar</Text>
+          </Link>
+          <Link to={"/nosotros"}>
+          <Text css={{padding:"0 20px"}} color="$gray200" weight="semibold">Nosotros</Text>
+          </Link>
+          <Link to={"/contacto"}>
+          <Text css={{padding:"0 20px"}} color="$gray200" weight="semibold">Contacto</Text>
+          </Link>
+        </Row>
+      </Grid>
+      <Grid css={{padding:"15px"}} >
+        <Row>
+        <Link to={"/carrito"}>
+        <Text color="$gray200" weight="semibold">Carrito</Text>
         </Link>
         <Link to={"/carrito"}>
-          <NavBarLink text={"Carrito"} icon={<CartWidget />} />
+          <CartWidget/>
         </Link>
-      </Row>
-    </Container>
+        </Row>
+      </Grid>
+    </Grid.Container>
   );
 };

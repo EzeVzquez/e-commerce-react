@@ -1,4 +1,5 @@
 import "./ItemDetail.css";
+import { Card, Grid, Row, Text } from "@nextui-org/react";
 import { onAdd } from "../../../helpers/onAdd";
 import { ItemCount } from "../itemCount/ItemCount";
 import { formatPrice } from "../../../helpers/formatPrice";
@@ -11,21 +12,26 @@ export const ItemDetail = ({
   description,
 }) => {
   return (
-    <div className="itemDetail-container">
-      <div className="itemDetail-img--container">
-        <img className="ItemDetail-img" src={pictureUrl} alt={title} />
-      </div>
-      <div className="itemDetail-detail">
-        <h2 className="itemDetail-detail--title">{title}</h2>
-        <p className="itemDetail-detail--text itemDetail-detail--description">
-          {description}
-        </p>
-        <p className="itemDetail-detail--text itemDetail-detail--stock">
-          En stock:{stock}
-        </p>
-        <h3 className="itemDetail-detail--price">{formatPrice(price)}</h3>
-        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
-      </div>
-    </div>
+    <Grid.Container>
+      <Row>
+        <Card.Header css={{ mw: "600px" }}>
+          <Card.Image width={500} height={500} src={pictureUrl} alt={title} />
+        </Card.Header>
+        <Card.Body>
+          <Grid css={{ margin: "20px" }}>
+            <Text h2>{title}</Text>
+          </Grid>
+          <Grid css={{ margin: "20px" }}>
+            <Text>{description}</Text>
+          </Grid>
+          <Grid css={{ margin: "20px" }}>
+            <Text h3>{formatPrice(price)}</Text>
+          </Grid>
+          <Grid css={{ margin: "50px 20px" }}>
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+          </Grid>
+        </Card.Body>
+      </Row>
+    </Grid.Container>
   );
 };
