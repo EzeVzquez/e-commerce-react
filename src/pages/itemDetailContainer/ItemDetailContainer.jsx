@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
     <Grid.Container justify="center" css={{ margin: "30px 0px" }}>
       {loading ? (
         <Loading size="xl" color="secondary" textColor="secondary">
-          Cargando
+          Cargando...
         </Loading>
       ) : (
         <ItemDetail {...product} />

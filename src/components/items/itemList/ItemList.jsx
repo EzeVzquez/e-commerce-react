@@ -27,14 +27,14 @@ export const ItemList = () => {
   }, [catId]);
 
   return (
-    <Grid.Container justify="center" css={{margin:"30px 0px"}}>
+    <Grid.Container justify="center" css={{ margin: "30px 0px" }}>
       {loading ? (
-        <Loading size="xl" color="secondary" textColor="secondary">Cargando</Loading>
+        <Loading size="xl" color="secondary" textColor="secondary">
+          Cargando...
+        </Loading>
       ) : (
         products.map((product) => <Item key={product.id} {...product} />)
       )}
     </Grid.Container>
   );
 };
-
-

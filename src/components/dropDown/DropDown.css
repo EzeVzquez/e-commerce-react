@@ -1,0 +1,22 @@
+.dropdown {
+    user-select: none;
+    position: relative;
+}
+
+.dropdown .dropdown-btn{
+    cursor: pointer;
+}
+
+.dropdown .dropdown-content {
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    position: absolute;
+    background-color: #C17CEF;
+}
+
+.dropdown .dropdown-content .dropdown-item{
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+    background-color:#DDA9F9;
+}
