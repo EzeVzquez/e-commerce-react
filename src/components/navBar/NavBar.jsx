@@ -14,7 +14,7 @@ export const NavBar = () => {
       <Grid css={{ padding: "15px" }}>
         <Link to={"/"}>
           <Text size={20} weight="medium">
-            LOGO
+            TecHome
           </Text>
         </Link>
       </Grid>
