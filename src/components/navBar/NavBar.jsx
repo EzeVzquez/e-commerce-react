@@ -1,12 +1,10 @@
-import "./NavBar.css";
 import { Row, Grid, Text } from "@nextui-org/react";
 import { CartWidget } from "../cart/cartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import { DropDown } from "../dropDown/DropDown";
-import { useState } from "react";
 
 export const NavBar = () => {
-  const [selected, setSelected] = useState("")
+  
   return (
     <Grid.Container
       css={{ background: "$purple300" }}
@@ -31,7 +29,7 @@ export const NavBar = () => {
               Inicio
             </Text>
           </Link>
-          <DropDown selected={selected} setSelected={setSelected} />
+          <DropDown />
           <Link to={"/nosotros"}>
             <Text
               css={{ padding: "0 20px" }}
@@ -54,11 +52,6 @@ export const NavBar = () => {
       </Grid>
       <Grid css={{ padding: "15px" }}>
         <Row>
-          <Link to={"/carrito"}>
-            <Text color="$gray200" weight="semibold">
-              Carrito
-            </Text>
-          </Link>
           <Link to={"/carrito"}>
             <CartWidget />
           </Link>

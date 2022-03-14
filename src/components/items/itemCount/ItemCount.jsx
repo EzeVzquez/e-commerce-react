@@ -1,4 +1,3 @@
-import "./ItemCount.css";
 import { useState } from "react";
 import { Button, Grid, Text, Col } from "@nextui-org/react";
 
@@ -80,14 +79,14 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                 padding: "20px 30px",
                 margin: "5px",
               }}
-              auto
+              size="xs"
               rounded
               title="Agregar al carrito"
               onClick={() => onAdd(count)}
             >
               <Text
                 transform="uppercase"
-                size={14}
+                size={12}
                 weight="medium"
                 css={{ color: "$purple600" }}
               >

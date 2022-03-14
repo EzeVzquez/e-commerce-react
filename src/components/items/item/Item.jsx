@@ -5,7 +5,7 @@ import { Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
 export const Item = ({ id, title, stock, price, pictureUrl, description }) => {
   return (
     <Grid.Container gap={2} css={{ width: "400px" }}>
-      <Grid fluid>
+      <Grid>
         <Card cover css={{ mw: "100%" }}>
           <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
             <Col>
@@ -31,7 +31,7 @@ export const Item = ({ id, title, stock, price, pictureUrl, description }) => {
             blur
             css={{
               position: "absolute",
-              bgBlur: "$purple900",
+              bgBlur: "#f1f1f1",
               bottom: 0,
               zIndex: 1,
             }}
