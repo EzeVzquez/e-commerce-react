@@ -1,11 +1,15 @@
 import { useCartContext } from "../../context/cartContext/CartContext";
 import { Cart } from "../../components/cart/Cart";
+import { Button, Col, Grid, Row } from "@nextui-org/react";
 
 export const CartContainer = () => {
-  const { cartList } = useCartContext();
+  const { cartList, clearCart } = useCartContext();
+
+  const clear = () => clearCart()
 
   return (
-    <div>
+      <Grid.Container css={{margin:"20px"}}>
+        <Col>
       {cartList.map((product) => (
         <div key={product.id}>
           <Cart
@@ -16,6 +20,8 @@ export const CartContainer = () => {
           ></Cart>
         </div>
       ))}
-    </div>
+        </Col>
+      <Button css={{background:"#1c0631"}} onClick={clear} >Borrar todo</Button>
+      </Grid.Container>
   );
 };
