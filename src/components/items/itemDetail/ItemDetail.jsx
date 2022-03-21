@@ -3,17 +3,20 @@ import { ItemCount } from "../itemCount/ItemCount";
 import { formatPrice } from "../../../helpers/formatPrice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../../context/cartContext/CartContext";
 
-export const ItemDetail = ({
-  title,
-  stock,
-  price,
-  pictureUrl,
-  description,
-}) => {
+export const ItemDetail = (props) => {
+  const { title, stock, price, pictureUrl, description } = props;
+
   const [buy, setBuy] = useState(false);
 
-  const onAdd = (count) => setBuy(true);
+  const { addCart } = useCartContext();
+
+  const onAdd = (count) => {
+    setBuy(true);
+    addCart({ ...props, cantidad: count });
+  };
+
   return (
     <Grid.Container justify="flex-start">
       <Row>
