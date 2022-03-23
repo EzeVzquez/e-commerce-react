@@ -1,4 +1,5 @@
 import { createContext, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 const CartContext = createContext();
@@ -6,6 +7,8 @@ const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [quantityInCart, setQuantityInCart] = useState (0)
   const [cartList, setCartList] = useLocalStorage("product", []);
 
   const deleteItem = (id) => {
@@ -44,6 +47,22 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const totalPrice = cartList.map((product) => {
+      return {...product, total: product.cantidad * product.price}
+    });
+    setTotalPrice(totalPrice.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.total, 0    
+    ))
+
+    const quantityInCart = cartList.map((product)=> {
+      return {...product, totalQuantity: product.cantidad}
+    });
+    setQuantityInCart(quantityInCart.reduce(
+      (previousValue, currentValue)=> previousValue + currentValue.totalQuantity, 0
+    ))
+  },[cartList])
+
   return (
     <CartContext.Provider
       value={{
@@ -51,6 +70,8 @@ export const CartContextProvider = ({ children }) => {
         addCart,
         clearCart,
         deleteItem,
+        totalPrice,
+        quantityInCart
       }}
     >
       {children}

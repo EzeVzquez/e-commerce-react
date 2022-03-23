@@ -1,8 +1,9 @@
 import { Button, Card, Grid, Row, Text } from "@nextui-org/react";
 import { formatPrice } from "../../helpers/formatPrice";
-import "./Cart.css";
 
-export const Cart = ({id, title, price, pictureUrl, count, onDelete }) => {
+
+export const Cart = ({id, title, price, pictureUrl, count, onDelete, totalItem }) => {
+
   return (
     <Grid.Container>
       <Row>
@@ -15,6 +16,7 @@ export const Cart = ({id, title, price, pictureUrl, count, onDelete }) => {
             <Text css={{margin:"0 5px"}} h5>{formatPrice(price)}</Text>
             <Text css={{margin:"0 5px"}} h6>Cantindad: {count}</Text>
             <Button size={"sm"} css={{background:"#461491"}} onClick={ ()=> onDelete(id)}>Borrar</Button>
+            <Text h3>{formatPrice(totalItem)}</Text> 
           </Row>
         </Card.Body>
       </Row>

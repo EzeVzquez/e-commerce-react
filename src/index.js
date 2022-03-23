@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { getFireStoreApp } from "./fireBase/apiKey";
 import reportWebVitals from "./reportWebVitals";
+
+getFireStoreApp()
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,6 +3,7 @@ import { Grid, Loading } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import { getFetch } from "../../helpers/getFetch";
 import { useParams } from "react-router-dom";
+import { getFirestore, doc, getDoc } from "firebase/firestore"
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
@@ -24,6 +25,14 @@ export const ItemListContainer = () => {
         .finally(() => setLoading(false));
     }
   }, [catId]);
+
+  // useEffect(()=> {
+  //   const db = getFirestore()
+  //   const queryDb = doc(db,"items", "id")
+  //   getDoc(queryDb)
+  //   .then(response => console.log(response))
+  // })
+
   return (
     <Grid.Container justify="center" css={{ margin: "30px 0px" }}>
       {loading ? (
