@@ -2,6 +2,7 @@ import { useCartContext } from "../../context/cartContext/CartContext";
 import { Cart } from "../../components/cart/Cart";
 import { Button, Col, Grid, Text } from "@nextui-org/react";
 import { formatPrice } from "../../helpers/formatPrice";
+import { Link } from "react-router-dom";
 
 export const CartContainer = () => {
   const { cartList, clearCart, deleteItem, totalPrice } = useCartContext();
@@ -11,8 +12,12 @@ export const CartContainer = () => {
   return (
     <>
       {cartList.length === 0 ? (
-        <p>no hay nada</p>
-
+        <Grid.Container alignContent="center" direction="column">
+              <Text h2>El carrito se encuentra vacio :(</Text>
+              <Link to={`/`}>
+              <Button css={{width:"20px", margin:"auto", background:"$purple500"}}>Volver al inicio</Button>
+              </Link>
+        </Grid.Container>
       ) : (
         <Grid.Container css={{ margin: "20px" }}>
           <Col>

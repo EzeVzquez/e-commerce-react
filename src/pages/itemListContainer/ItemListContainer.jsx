@@ -3,7 +3,7 @@ import { Grid, Loading } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import { getFetch } from "../../helpers/getFetch";
 import { useParams } from "react-router-dom";
-import { getFirestore, doc, getDoc } from "firebase/firestore"
+// import { getFirestore, doc, getDoc } from "firebase/firestore"
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);

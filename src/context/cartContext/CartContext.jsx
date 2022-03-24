@@ -11,22 +11,28 @@ export const CartContextProvider = ({ children }) => {
   const [quantityInCart, setQuantityInCart] = useState (0)
   const [cartList, setCartList] = useLocalStorage("product", []);
 
-  const deleteItem = (id) => {
-    const item = cartList.find((item) => item.id === id);
+  // const deleteItem = (id) => {
+  //   const item = cartList.find((item) => item.id === id);
 
-    if (item.cantidad === 1) {
-      setCartList(cartList.filter((item) => item.id !== id));
-    } else {
-      setCartList(
-        cartList.map((product) => {
-          if (product.id === item.id) {
-            return { ...item, cantidad: item.cantidad - 1 };
-          }
-          return product;
-        })
-      );
-    }
-  };
+    
+  //   if (item.cantidad === 1) {
+  //     setCartList(cartList.filter((item) => item.id !== id));
+  //   } else {
+  //     setCartList(
+  //       cartList.map((product) => {
+  //         if (product.id === item.id) {
+  //           return { ...item, cantidad: item.cantidad - 1 };
+  //         }
+  //         return product;
+  //       })
+  //     );
+  //   }
+  // };
+
+  function deleteItem(id) {
+    const newCartList = cartList.filter((item) => item.id !== id);
+    setCartList(newCartList);
+  }
 
   const clearCart = () => setCartList([]);
 
