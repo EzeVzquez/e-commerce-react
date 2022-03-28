@@ -27,7 +27,7 @@ export const CartContainer = () => {
                   id={product.id}
                   title={product.title}
                   price={product.price}
-                  pictureUrl={product.pictureUrl}
+                  image={product.image}
                   count={product.cantidad}
                   onDelete={deleteItem}
                   totalItem={product.cantidad * product.price}

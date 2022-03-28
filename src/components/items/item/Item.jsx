@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { formatPrice } from "../../../helpers/formatPrice";
 import { Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
 
-export const Item = ({ id, title, stock, price, pictureUrl, description }) => {
+export const Item = ({ id, title, stock, price, image, description }) => {
   return (
     <Grid.Container gap={2} css={{ width: "400px" }}>
       <Grid>
@@ -21,7 +21,7 @@ export const Item = ({ id, title, stock, price, pictureUrl, description }) => {
           </Card.Header>
           <Card.Body>
             <Card.Image
-              src={pictureUrl}
+              src={image}
               height="100%"
               width="100%"
               alt={title}

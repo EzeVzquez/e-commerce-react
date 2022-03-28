@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../../context/cartContext/CartContext";
 
 export const ItemDetail = (props) => {
-  const { title, stock, price, pictureUrl, description } = props;
+  const { title, stock, price, image, description } = props;
 
   const [buy, setBuy] = useState(false);
 
@@ -21,7 +21,7 @@ export const ItemDetail = (props) => {
     <Grid.Container justify="flex-start">
       <Row>
         <Card.Header css={{ mw: "600px" }}>
-          <Card.Image width={500} height={500} src={pictureUrl} alt={title} />
+          <Card.Image width={500} height={500} src={image} alt={title} />
         </Card.Header>
         <Card.Body>
           <Grid css={{ margin: "20px" }}>
