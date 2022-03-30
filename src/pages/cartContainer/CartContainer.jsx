@@ -5,9 +5,9 @@ import { formatPrice } from "../../helpers/formatPrice";
 import { Link } from "react-router-dom";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
+import { CartListWrapper } from "../../components/cart/carList/cartList";
 
 export const CartContainer = () => {
-  
   const [dataForm, setDataForm] = useState({
     name: "",
     phone: "",
@@ -63,23 +63,13 @@ export const CartContainer = () => {
           </Link>
         </Grid.Container>
       ) : (
-        <Grid.Container css={{ margin: "20px" }}>
-          <Col>
-            {cartList.map((product) => (
-              <div key={product.id}>
-                <Cart
-                  id={product.id}
-                  title={product.title}
-                  price={product.price}
-                  image={product.image}
-                  count={product.cantidad}
-                  onDelete={deleteItem}
-                  totalItem={product.cantidad * product.price}
-                ></Cart>
-              </div>
-            ))}
+        <div>
+        <CartListWrapper
+        cartList={cartList}
+        deleteItem={deleteItem}
+        />
             <Text h3>Cantidad Total a pagar:{formatPrice(totalPrice)}</Text>
-          </Col>
+
 
           <Button
             css={{ background: "#1c0631", marginLeft: "$5" }}
@@ -114,9 +104,8 @@ export const CartContainer = () => {
                 onChange={handleChange}
               />
               <Button
-                onClick= {()=> {
-                  generateOrder()
-                  clear()
+                onClick={() => {
+                  generateOrder();
                 }}
                 css={{ background: "#DDA9F9", marginRight: "$5" }}
               >
@@ -124,7 +113,7 @@ export const CartContainer = () => {
               </Button>
             </form>
           </Col>
-        </Grid.Container>
+        </div>
       )}
     </>
   );
