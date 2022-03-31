@@ -1,61 +1,48 @@
-import { Button, Col, Grid, Input, Spacer } from "@nextui-org/react";
-import { useState } from "react";
+import { Button, Grid, Input, Spacer, Text } from "@nextui-org/react";
+import { useForm } from "react-hook-form";
 
 export const CartForm = ({ onSubmit }) => {
-  const [dataForm, setDataForm] = useState({
-    name: "",
-    phone: "",
-    email: "",
-  });
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const handleChange = (e) => {
-    setDataForm({
-      ...dataForm,
-      [e.target.name]: e.target.value,
-    });
-  };
+  
 
   return (
-      <Grid.Container>
-        <Grid>
+    <Grid.Container>
+      <Grid>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            onSubmit(dataForm);
-          }}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <Input
             type="text"
-            name="name"
+            {...register("name", {required:"Campo requerido."})}
             placeholder="nombre"
             label="Nombre:"
-            value={dataForm.name}
-            onChange={handleChange}
           />
-          <Spacer y={0.5}/>
+          <Text>{errors.name?.message}</Text>
+          <Spacer y={0.5} />
           <Input
-            type="text"
-            name="phone"
+            type="phone"
+            {...register("phone", {required:"Campo requerido."})}
             placeholder="tel"
             label="Telefono:"
-            value={dataForm.phone}
-            onChange={handleChange}
           />
-           <Spacer y={0.5}/>
+          <Text>{errors.phone?.message}</Text>
+          <Spacer y={0.5} />
           <Input
             type="email"
-            name="email"
+            {...register("email", {required:"Campo requerido."})}
             placeholder="email"
             label="Email:"
-            value={dataForm.email}
-            onChange={handleChange}
           />
-           <Spacer y={1}/>
-          <Button css={{ background: "#DDA9F9", marginRight: "$5" }}>
-            Finalizar compra
-          </Button>
+          <Text>{errors.email?.message}</Text>
+          <Spacer y={1} />
+          <Button
+            type="submit"
+            name="finalizar compra"  
+            css={{background: "#DDA9F9"}}
+          >Finalizar Compra</Button>
         </form>
-          </Grid>
-      </Grid.Container>
+      </Grid>
+    </Grid.Container>
   );
 };

@@ -10,14 +10,15 @@ export const CartContainer = () => {
 
   return (
     <>
-      {cartList.length === 0 ? (
+      {cartList.length === 0 && id === "" ?(
         <CartListEmptyState />
-      ) : (
-          !id ?(
+        ) : (
+          !id ?(      
             <CartListWrapper
             setId={setId}
+            id={id}
             />
-          ) : (
+            ) : (
             <CartCongrat id={id} />
           )
       )}

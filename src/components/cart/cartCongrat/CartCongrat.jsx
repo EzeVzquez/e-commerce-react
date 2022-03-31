@@ -1,4 +1,4 @@
-import { Col, Grid, Text } from "@nextui-org/react";
+import { Grid, Text } from "@nextui-org/react";
 
 export const CartCongrat = ({ id }) => {
   return (
