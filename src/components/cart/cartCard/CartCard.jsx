@@ -28,14 +28,14 @@ export const Cart = ({
               Cantindad: {count}
             </Text>
             <Button
-              size={"sm"}
-              css={{ background: "#461491" }}
+              size="200px"
+              css={{ background: "none", color:"$black", margin:"0 20px" }}
               onClick={() => onDelete(id)}
             >
-              Borrar
+              X
             </Button>
-            <Text h3>{formatPrice(totalItem)}</Text>
           </Row>
+            <Text h4>{formatPrice(totalItem)}</Text>
         </Card.Body>
       </Row>
     </Grid.Container>

@@ -1,4 +1,4 @@
-import { Button, Col, Input } from "@nextui-org/react";
+import { Button, Col, Grid, Input, Spacer } from "@nextui-org/react";
 import { useState } from "react";
 
 export const CartForm = ({ onSubmit }) => {
@@ -16,8 +16,8 @@ export const CartForm = ({ onSubmit }) => {
   };
 
   return (
-    <>
-      <Col>
+      <Grid.Container>
+        <Grid>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -27,32 +27,35 @@ export const CartForm = ({ onSubmit }) => {
           <Input
             type="text"
             name="name"
-            placeholder="name"
-            label="Nombre"
+            placeholder="nombre"
+            label="Nombre:"
             value={dataForm.name}
             onChange={handleChange}
           />
+          <Spacer y={0.5}/>
           <Input
             type="text"
             name="phone"
             placeholder="tel"
-            label="Telefono"
+            label="Telefono:"
             value={dataForm.phone}
             onChange={handleChange}
           />
+           <Spacer y={0.5}/>
           <Input
             type="email"
             name="email"
             placeholder="email"
-            label="Email"
+            label="Email:"
             value={dataForm.email}
             onChange={handleChange}
           />
+           <Spacer y={1}/>
           <Button css={{ background: "#DDA9F9", marginRight: "$5" }}>
             Finalizar compra
           </Button>
         </form>
-      </Col>
-    </>
+          </Grid>
+      </Grid.Container>
   );
 };

@@ -1,4 +1,4 @@
-import { Card, Grid, Row, Text, Button } from "@nextui-org/react";
+import { Card, Grid, Row, Text, Button, Container, Spacer } from "@nextui-org/react";
 import { ItemCount } from "../itemCount/ItemCount";
 import { formatPrice } from "../../../helpers/formatPrice";
 import { useState } from "react";
@@ -35,27 +35,51 @@ export const ItemDetail = (props) => {
           </Grid>
           <Grid css={{ margin: "50px 20px" }}>
             {buy && (
-              <Link to={"/carrito"}>
-                <Button
-                  css={{
-                    background: "$purple100",
-                    padding: "20px 30px",
-                    margin: "5px",
-                  }}
-                  size="xs"
-                  rounded
-                  title="Agregar al carrito"
-                >
-                  <Text
-                    transform="uppercase"
-                    size={12}
-                    weight="medium"
-                    css={{ color: "$purple600" }}
+              <Container>
+                <Link to={"/carrito"}>
+                  <Button
+                    css={{
+                      background: "$purple100",
+                      padding: "20px 30px",
+                      margin: "5px",
+                    }}
+                    size="xs"
+                    rounded
+                    title="Agregar al carrito"
                   >
-                    Ir al carrito
-                  </Text>
-                </Button>
-              </Link>
+                    <Text
+                      transform="uppercase"
+                      size={12}
+                      weight="medium"
+                      css={{ color: "$purple600" }}
+                    >
+                      Ir al carrito
+                    </Text>
+                  </Button>
+                </Link>
+                <Spacer y={1}/>
+                <Link to={"/"}>
+                  <Button
+                    css={{
+                      background: "$purple100",
+                      padding: "20px 12px",
+                      margin: "5px",
+                    }}
+                    size="xs"
+                    rounded
+                    title="Agregar al carrito"
+                  >
+                    <Text
+                      transform="uppercase"
+                      size={12}
+                      weight="medium"
+                      css={{ color: "$purple600" }}
+                    >
+                      Seguir comprando
+                    </Text>
+                  </Button>
+                </Link>
+              </Container>
             )}
             {!buy && <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
           </Grid>
