@@ -1,10 +1,8 @@
-import { Col, Grid } from "@nextui-org/react";
-import { Cart } from "../Cart";
+import { Cart } from "../cartCard/CartCard"
 
-export const CartListWrapper = ({ cartList, deleteItem }) => {
-  return (
-    <Grid.Container css={{ margin: "20px" }}>
-      <Col>
+export const CartList = ({cartList, deleteItem})=> {
+    return(
+        <>
         {cartList.map((product) => (
           <div key={product.id}>
             <Cart
@@ -18,7 +16,6 @@ export const CartListWrapper = ({ cartList, deleteItem }) => {
             ></Cart>
           </div>
         ))}
-      </Col>
-    </Grid.Container>
-  );
-};
+        </>
+    )
+}

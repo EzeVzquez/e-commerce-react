@@ -1,6 +1,6 @@
 import { CartIcon } from "../../../assets/svg/cartIcon/CartIcon";
 import { useCartContext } from "../../../context/cartContext/CartContext";
-import { Container, Grid, Row, Text } from "@nextui-org/react";
+import { Grid, Row, Text } from "@nextui-org/react";
 
 export const CartWidget = () => {
   const { quantityInCart } = useCartContext();
