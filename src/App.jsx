@@ -6,8 +6,6 @@ import { NavBar } from "./components/navBar/NavBar";
 import { ItemListContainer } from "./pages/itemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./pages/itemDetailContainer/ItemDetailContainer";
 import { CartContainer } from "./pages/cartContainer/CartContainer";
-import { AboutUsContainer } from "./pages/aboutUsContainer/AboutUsContainer";
-import { ContactContainer } from "./pages/contactContainer/ContactContainer";
 import { CartContextProvider } from "./context/cartContext/CartContext";
 
 function App() {
@@ -23,8 +21,6 @@ function App() {
             <Route path="/categoria/:catId" element={<ItemListContainer />} />
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
             <Route path="/carrito" element={<CartContainer />} />
-            <Route path="/nosotros" element={<AboutUsContainer />} />
-            <Route path="/contacto" element={<ContactContainer />} />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
