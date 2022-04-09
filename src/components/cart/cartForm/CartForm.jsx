@@ -15,7 +15,7 @@ export const CartForm = ({ onSubmit }) => {
           <Input
             type="text"
             {...register("name", {required:"Campo requerido."})}
-            placeholder="nombre"
+            placeholder="Juan Carlos"
             label="Nombre:"
           />
           <Text>{errors.name?.message}</Text>
@@ -23,7 +23,7 @@ export const CartForm = ({ onSubmit }) => {
           <Input
             type="phone"
             {...register("phone", {required:"Campo requerido."})}
-            placeholder="tel"
+            placeholder="11999000"
             label="Telefono:"
           />
           <Text>{errors.phone?.message}</Text>
@@ -31,7 +31,7 @@ export const CartForm = ({ onSubmit }) => {
           <Input
             type="email"
             {...register("email", {required:"Campo requerido."})}
-            placeholder="email"
+            placeholder="spinner@example.com"
             label="Email:"
           />
           <Text>{errors.email?.message}</Text>
