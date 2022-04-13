@@ -1,8 +1,9 @@
+import "./Loading.css"
 import { Container, Loading as Loader } from "@nextui-org/react";
 
 export const Loading = () => {
  return(
-  <Container fluid display="flex"  justify="center" alignContent="center">
+  <div className="loader-container">
     <Loader 
 
       size="xl"
@@ -11,6 +12,6 @@ export const Loading = () => {
     >
       Cargando...
     </Loader>
-  </Container>
+  </div>
  )
 };
