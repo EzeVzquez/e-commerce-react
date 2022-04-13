@@ -8,6 +8,13 @@ import { ItemDetailContainer } from "./pages/itemDetailContainer/ItemDetailConta
 import { CartContainer } from "./pages/cartContainer/CartContainer";
 import { CartContextProvider } from "./context/cartContext/CartContext";
 
+/*TODO:
+  [] fixear estilos del cart, detail.
+  [] Centrar loading.
+  [] Revisar fetch.
+  [] deployar en netlify o firebase. 
+*/
+
 function App() {
   return (
     <CartContextProvider>

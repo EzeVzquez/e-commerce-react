@@ -1,44 +1,51 @@
-import { Row, Grid, Text } from "@nextui-org/react";
+import "./NavBar.css";
+import { useState } from "react";
 import { CartWidget } from "../cart/cartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import { DropDown } from "../dropDown/DropDown";
+import { HamburgerMenuIcon } from "./../../assets/svg/hamburgerMenuIcon/HamburgerMenuIcon";
+import { CloseIcon } from "./../../assets/svg/closeIcon/CloseIcon";
+import { NavBarMenu } from "./navBarMenu/NavBarMenu";
 
 export const NavBar = () => {
-  
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
-    <Grid.Container
-      css={{ background: "$purple300" }}
-      xl
-      justify="space-between"
-    >
-      <Grid css={{ padding: "15px" }}>
-        <Link to={"/"}>
-          <Text size={20} weight="medium">
-            TecHome
-          </Text>
-        </Link>
-      </Grid>
-      <Grid css={{ padding: "15px" }}>
-        <Row>
+    <div className="nav-container">
+      <div className="nav-wrapper">
+        <div
+          className="nav-mobile_container"
+          onClick={() => setMobileMenu(!mobileMenu)}
+        >
+          {mobileMenu ? <CloseIcon /> : <HamburgerMenuIcon />}
+        </div>
+
+        <div className="nav-logo_container nav-logo-cart_container">
           <Link to={"/"}>
-            <Text
-              css={{ padding: "0 20px" }}
-              color="$gray200"
-              weight="semibold"
-            >
-              Inicio
-            </Text>
+            <div className="nav-logo">
+              <p className="nav-text nav-text--logo">TecHome</p>
+            </div>
           </Link>
-          <DropDown />
-        </Row>
-      </Grid>
-      <Grid css={{ padding: "15px" }}>
-        <Row>
+        </div>
+        {mobileMenu ? (
+          <NavBarMenu
+            classname="nav-menu"
+            onClickHide={ ()=> setMobileMenu(!mobileMenu)}
+          />
+        ) : (
+          <NavBarMenu
+            classname="nav-menu nav-menu-hide"
+            onClickHide={ ()=> setMobileMenu(!mobileMenu)}
+          />
+        )}
+
+        <div className="nav-cart_container nav-logo-cart_container">
           <Link to={"/carrito"}>
-            <CartWidget />
+            <div className="nav-cart">
+              <CartWidget />
+            </div>
           </Link>
-        </Row>
-      </Grid>
-    </Grid.Container>
+        </div>
+      </div>
+    </div>
   );
 };

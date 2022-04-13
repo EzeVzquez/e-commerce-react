@@ -1,4 +1,5 @@
-import { Card, Grid, Row, Text, Button, Container, Spacer } from "@nextui-org/react";
+import "./ItemDetail.css"
+import { Card, Grid, Text, Button, Container, Spacer } from "@nextui-org/react";
 import { ItemCount } from "../itemCount/ItemCount";
 import { formatPrice } from "../../../helpers/formatPrice";
 import { useState } from "react";
@@ -18,26 +19,21 @@ export const ItemDetail = (props) => {
   };
 
   return (
-    <Grid.Container justify="flex-start">
-      <Row>
-        <Card.Header css={{ mw: "600px" }}>
-          <Card.Image width={500} height={500} src={image} alt={title} />
-        </Card.Header>
-        <Card.Body>
-          <Grid css={{ margin: "20px" }}>
-            <Text h2>{title}</Text>
-          </Grid>
-          <Grid css={{ margin: "20px" }}>
-            <Text>{description}</Text>
-          </Grid>
-          <Grid css={{ margin: "20px" }}>
-            <Text h3>{formatPrice(price)}</Text>
-          </Grid>
-          <Grid css={{ margin: "50px 20px" }}>
-            {buy && (
-              <Container>
+
+    <section className="detail-container">
+      <div className="detail-wrapper">
+      <div className="detail-img_container">
+        <p className="detail-title">{title}</p>
+        <img className="detail-img" src={image} alt={title} />
+      </div>
+      <div className="detail-description_container">
+        <p className="detail-description">Descripción: {description}</p>
+        <p className="detail-price">{formatPrice(price)}</p>
+        {buy && (
+              <Container fluid margin="0">
                 <Link to={"/carrito"}>
                   <Button
+                  margin="0"
                     css={{
                       background: "$purple100",
                       padding: "20px 30px",
@@ -46,8 +42,9 @@ export const ItemDetail = (props) => {
                     size="xs"
                     rounded
                     title="Agregar al carrito"
-                  >
+                    >
                     <Text
+                    margin="0"
                       transform="uppercase"
                       size={12}
                       weight="medium"
@@ -68,23 +65,22 @@ export const ItemDetail = (props) => {
                     size="xs"
                     rounded
                     title="Agregar al carrito"
-                  >
+                    >
                     <Text
                       transform="uppercase"
                       size={12}
                       weight="medium"
                       css={{ color: "$purple600" }}
-                    >
+                      >
                       Seguir comprando
                     </Text>
                   </Button>
                 </Link>
               </Container>
             )}
-            {!buy && <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
-          </Grid>
-        </Card.Body>
-      </Row>
-    </Grid.Container>
+        {!buy && <ItemCount stock={stock} initial={1} onAdd={onAdd} />}
+      </div>
+      </div>
+    </section>
   );
 };

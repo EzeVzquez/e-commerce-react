@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export const CartCongrat = ({ id }) => {
   return (
     <Grid.Container alignContent="center" direction="column">
-      <Text css={{ marginBottom: "20px", marginTop:"20px" }} h2>
-        Gracias por su compra!
+      <Text css={{ marginBottom: "20px", marginTop: "20px" }} h2>
+        ¡Gracias por su compra!
       </Text>
       <Text
         css={{ marginBottom: "20px", textAlign: "center" }}

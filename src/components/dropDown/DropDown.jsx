@@ -12,11 +12,11 @@ export const DropDown = () => {
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
         <Row css={{ padding: "0 20px" }}>
-        <Text  color="$gray200" weight="semibold">
-          Categorias
-        </Text>
+          <Text color="$gray200" weight="semibold">
+            Categorías
+          </Text>
           <Text
-          css={{margin:"5px"}}
+            css={{ margin: "5px" }}
             color="$gray200"
             size={14}
             className="fas fa-caret-down"
@@ -32,7 +32,7 @@ export const DropDown = () => {
                 color="$gray200"
                 weight="semibold"
               >
-                Tecnologia
+                Tecnología
               </Text>
             </div>
           </Link>

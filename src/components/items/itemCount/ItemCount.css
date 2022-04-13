@@ -1,0 +1,25 @@
+.button-count{
+    margin: 0 10px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 20%;
+    display: inline-block;
+}
+
+.button-count:disabled{
+    cursor: not-allowed;
+}
+
+.button-count:enabled{
+    cursor: pointer;
+}
+
+.button-count_add {
+    color:#461491;
+    background-color:#DDA9F9;
+}
+
+.button-count_remove {
+    color: #461491;
+    background-color: #C17CEF;
+}

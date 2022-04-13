@@ -1,3 +1,4 @@
+import "./ItemCount.css"
 import { useState } from "react";
 import { Button, Grid, Text, Col } from "@nextui-org/react";
 
@@ -29,48 +30,22 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
             </Text>
           </Grid.Container>
           <Grid.Container justify="center">
-            <Button
-              css={{
-                background: "$purple500",
-                padding: "20px 30px",
-                margin: "8px",
-              }}
-              auto
-              rounded
+            <button
+              className="button-count button-count_add"
               title="Agregar"
               disabled={count === stock}
               onClick={agregar}
             >
-              <Text
-                transform="uppercase"
-                size={20}
-                weight="bold"
-                css={{ color: "$purple200" }}
-              >
-                +
-              </Text>
-            </Button>
-            <Button
-              css={{
-                background: "$purple200",
-                padding: "20px 30px",
-                margin: "0 8px",
-              }}
-              auto
-              rounded
+              +
+            </button>
+            <button
+              className="button-count button-count_remove"
               title="Quitar"
               disabled={count === 1}
               onClick={quitar}
             >
-              <Text
-                transform="uppercase"
-                size={20}
-                weight="bold"
-                css={{ color: "$purple500" }}
-              >
-                -
-              </Text>
-            </Button>
+              -
+            </button>
           </Grid.Container>
           <Grid.Container justify="center">
             <Button

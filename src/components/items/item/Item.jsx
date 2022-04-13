@@ -20,12 +20,7 @@ export const Item = ({ id, title, stock, price, image, description }) => {
             </Col>
           </Card.Header>
           <Card.Body>
-            <Card.Image
-              src={image}
-              height="100%"
-              width="100%"
-              alt={title}
-            />
+            <Card.Image src={image} height="100%" width="100%" alt={title} />
           </Card.Body>
           <Card.Footer
             blur
@@ -44,7 +39,7 @@ export const Item = ({ id, title, stock, price, image, description }) => {
                 En stock: {stock}
               </Text>
               <Text color="#1B1C1E" size={12}>
-                Descripcion: {description}
+                Descripción: {description}
               </Text>
             </Col>
             <Row justify="flex-end">

@@ -7,7 +7,7 @@ import { generateOrder } from "../../../helpers/generateOrder";
 
 export const CartListWrapper = ({ setId }) => {
   const { cartList, clearCart, deleteItem, totalPrice } = useCartContext();
-  
+
   const handleSubmitCart = (dataForm) => {
     console.log(dataForm);
     generateOrder(dataForm, totalPrice, cartList)
@@ -16,17 +16,15 @@ export const CartListWrapper = ({ setId }) => {
         clearCart();
       })
       .catch((error) => console.error(error))
-      .finally(console.log("finalizado"));
+      .finally();
   };
   return (
-    <Grid.Container css={{ margin: "20px" }}>
-      <Row>
+    <Container css={{ margin: "20px 0" }}>
         <Container>
           <CartList cartList={cartList} deleteItem={deleteItem} />
           <CartResume clearCart={clearCart} totalPrice={totalPrice} />
         </Container>
         <CartForm onSubmit={handleSubmitCart} clearCart={clearCart} />
-      </Row>
-    </Grid.Container>
+    </Container>
   );
 };

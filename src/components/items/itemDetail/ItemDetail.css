@@ -1,0 +1,38 @@
+.detail-wrapper {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.detail-img_container {
+    margin: 0 30px;
+}
+
+.detail-description_container{
+    margin: 60px 30px;
+}
+
+.detail-img{
+    height: 100%;
+    max-height: 500px;
+    border-radius: 5%;
+}
+
+.detail-title {
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+.detail-price {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 960px){
+    .detail-wrapper{
+        flex-direction: column;
+    }
+
+    .detail-img{
+        
+    }
+}

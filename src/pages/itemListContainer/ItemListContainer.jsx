@@ -1,7 +1,8 @@
 import { ItemList } from "./../../components/items/itemList/ItemList";
-import { Grid, Loading } from "@nextui-org/react";
+import { Grid } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Loading } from "../../components/loading/Loading";
 import {
   getFirestore,
   getDocs,
@@ -12,6 +13,7 @@ import {
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const { catId } = useParams();
 
@@ -26,7 +28,7 @@ export const ItemListContainer = () => {
             response.docs.map((item) => ({ id: item.id, ...item.data() }))
           )
         )
-        .catch((error) => console.log(error))
+        .catch(() => setError(true))
         .finally(() => setLoading(false));
     } else {
       const queryColection = collection(db, "products");
@@ -36,20 +38,20 @@ export const ItemListContainer = () => {
             response.docs.map((item) => ({ id: item.id, ...item.data() }))
           )
         )
-        .catch((error) => console.log(error))
+        .catch(() => setError(true))
         .finally(() => setLoading(false));
     }
   }, [catId]);
 
   return (
-    <Grid.Container justify="center" css={{ margin: "30px 0px" }}>
+    <>
       {loading ? (
-        <Loading size="xl" color="secondary" textColor="secondary">
-          Cargando...
-        </Loading>
+        <Loading />
       ) : (
-        <ItemList products={products} />
+        <Grid.Container justify="center" css={{ margin: "30px 0px" }}>
+          <ItemList products={products} />
+        </Grid.Container>
       )}
-    </Grid.Container>
+    </>
   );
 };
