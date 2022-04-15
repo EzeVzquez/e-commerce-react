@@ -1,10 +1,10 @@
 import { formatPrice } from "../../../helpers/formatPrice";
-import { Button, Col, Container, Text } from "@nextui-org/react";
+import { Button, Container, Spacer, Text } from "@nextui-org/react";
 
 export const CartResume = ({ clearCart, totalPrice }) => {
   return (
-    <Container>
-      <Col>
+    <Container css={{ marginBottom:"1.5rem" }}>
+      {/* <Col> */}
         <Button
         bordered
         color="#1c0631"
@@ -14,8 +14,9 @@ export const CartResume = ({ clearCart, totalPrice }) => {
         >
           Borrar todo
         </Button>
-        <Text h3>Cantidad total a pagar: {formatPrice(totalPrice)}</Text>
-      </Col>
+        <Spacer y={1} />
+        <Text h3>Total: {formatPrice(totalPrice)}</Text>
+      {/* </Col> */}
     </Container>
   );
 };

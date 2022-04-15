@@ -1,11 +1,11 @@
-import { Cart } from "../cartCard/CartCard"
+import { CartCard } from "../cartCard/CartCard"
 
 export const CartList = ({cartList, deleteItem})=> {
     return(
         <>
         {cartList.map((product) => (
           <div key={product.id}>
-            <Cart
+            <CartCard
               id={product.id}
               title={product.title}
               price={product.price}
@@ -13,7 +13,7 @@ export const CartList = ({cartList, deleteItem})=> {
               count={product.cantidad}
               onDelete={deleteItem}
               totalItem={product.cantidad * product.price}
-            ></Cart>
+            ></CartCard>
           </div>
         ))}
         </>
