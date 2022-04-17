@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CartListWrapper } from "../../components/cart/carListWrapper/CartListWrapper";
+import { CartListWrapper } from "../../components/cart/carListWrapper/cartListWrapper"
 import { CartCongrat } from "../../components/cart/cartCongrat/CartCongrat";
 import { CartListEmptyState } from "../../components/cart/cartListEmptyState/CartListEmptyState";
 import { useCartContext } from "../../context/cartContext/CartContext";
