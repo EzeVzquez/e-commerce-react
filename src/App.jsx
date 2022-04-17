@@ -8,20 +8,13 @@ import { ItemDetailContainer } from "./pages/itemDetailContainer/ItemDetailConta
 import { CartContainer } from "./pages/cartContainer/CartContainer";
 import { CartContextProvider } from "./context/cartContext/CartContext";
 
-/*TODO:
-  [] Revisar fetch.
-  [] deployar en netlify o firebase. 
-*/
-
 function App() {
   return (
     <CartContextProvider>
       <NextUIProvider>
         <BrowserRouter>
-          {/* header */}
           <NavBar />
           <Routes>
-            {/* body */}
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/categoria/:catId" element={<ItemListContainer />} />
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
