@@ -1,5 +1,5 @@
 import "./Loading.css"
-import { Container, Loading as Loader } from "@nextui-org/react";
+import { Loading as Loader } from "@nextui-org/react";
 
 export const Loading = () => {
  return(

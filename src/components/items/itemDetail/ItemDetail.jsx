@@ -1,5 +1,5 @@
 import "./ItemDetail.css"
-import { Card, Grid, Text, Button, Container, Spacer } from "@nextui-org/react";
+import { Text, Button, Container, Spacer } from "@nextui-org/react";
 import { ItemCount } from "../itemCount/ItemCount";
 import { formatPrice } from "../../../helpers/formatPrice";
 import { useState } from "react";
