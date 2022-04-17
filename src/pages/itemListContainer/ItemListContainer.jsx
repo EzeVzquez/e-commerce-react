@@ -13,34 +13,22 @@ import {
 
 export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const { catId } = useParams();
 
   useEffect(() => {
     const db = getFirestore();
-    if (catId) {
-      const queryColection = collection(db, "products");
-      const queryFilter = query(queryColection, where("category", "==", catId));
-      getDocs(queryFilter)
-        .then((response) =>
-          setProducts(
-            response.docs.map((item) => ({ id: item.id, ...item.data() }))
-          )
+    const queryColection = collection(db, "products");
+    const queryFilter = catId
+      ? query(queryColection, where("category", "==", catId))
+      : queryColection;
+    getDocs(queryFilter)
+      .then((response) =>
+        setProducts(
+          response.docs.map((item) => ({ id: item.id, ...item.data() }))
         )
-        .catch(() => setError(true))
-        .finally(() => setLoading(false));
-    } else {
-      const queryColection = collection(db, "products");
-      getDocs(queryColection)
-        .then((response) =>
-          setProducts(
-            response.docs.map((item) => ({ id: item.id, ...item.data() }))
-          )
-        )
-        .catch(() => setError(true))
-        .finally(() => setLoading(false));
-    }
+      )
+      .finally(() => setLoading(false));
   }, [catId]);
 
   return (
